@@ -394,7 +394,7 @@ export class Tabletojson {
             // If you need to pass in options for request (proxy)
             // add them to callbackFunctionOrOptions.request
             fetchOptions = options.fetchOptions || {};
-            const result = await fetch(url);
+            const result = await fetch(url, fetchOptions);
             const resultMimetype = result.headers.get('content-type');
             if (resultMimetype && !resultMimetype.includes('text/')) {
                 throw new Error('Tabletojson can just handle text/** mimetypes');
